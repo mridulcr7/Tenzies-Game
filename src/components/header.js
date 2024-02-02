@@ -6,7 +6,7 @@ function Header() {
     <div className='header'>
         <nav>
         <Link to="/body">Mridul</Link>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/dashboard">dashboard</Link>
         <Link to="/">Logout</Link>
         </nav>
     </div>
