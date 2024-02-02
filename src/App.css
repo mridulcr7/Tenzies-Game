@@ -1,21 +1,23 @@
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
-  margin: 0;
+  margin: 0px;
   background-color: #0B2434;
   padding: 20px;
   font-family: 'Karla', sans-serif;
 }
 
 main {
-  background-color: #F5F5F5;
+  background-color: #2b4d61;
   height: 400px;
   max-width: 800px;
   border-radius: 5px;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 80px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -49,7 +51,7 @@ main {
   width: 100px;
   border: none;
   border-radius: 6px;
-  background-color: #5035FF;
+  background-color: #2d9595;
   color: white;
   font-size: 1.2rem;
   font-family: 'Karla', sans-serif;
@@ -58,6 +60,7 @@ main {
 
 .title {
   font-size: 40px;
+  color: rgb(168, 158, 158);
   margin: 0;
 }
 
@@ -66,6 +69,7 @@ main {
   font-weight: 400;
   margin-top: 0;
   text-align: center;
+  color: rgb(168, 158, 158);
 }
 
 .roll-dice:focus {
@@ -74,4 +78,106 @@ main {
 
 .roll-dice:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+/* ***************************header*************************************/
+
+.header {
+
+  color: #fff;
+  padding: 10px;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #2d9595;
+  ;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border: 2px solid #2d9595;
+  border-radius: 5px;
+
+}
+
+nav a:hover {
+  color: #699cb7;
+}
+
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+/* *************************login******************************* */
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+
+}
+
+.login div {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .login div {
+    margin: 20px;
+  }
 }
