@@ -5,7 +5,7 @@ function Header() {
   return (
     <div className='header'>
         <nav>
-        <Link to="/body">Mridul</Link>
+        <Link to="/body">Home</Link>
         <Link to="/dashboard">dashboard</Link>
         <Link to="/">Logout</Link>
         </nav>
