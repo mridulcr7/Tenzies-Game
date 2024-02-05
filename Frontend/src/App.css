@@ -1,0 +1,267 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin: 0px;
+  background-color: #0B2434;
+  padding: 20px;
+  font-family: 'Karla', sans-serif;
+}
+main {
+  background-color: #2b4d61;
+  height: 450px;
+  max-width: 800px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 80px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dice-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 20px;
+}
+
+.die-face {
+  height: 50px;
+  width: 50px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.die-num {
+  font-size: 2rem;
+}
+
+.roll-dice {
+  height: 70px;
+  width: 130px;
+  border: none;
+  border-radius: 6px;
+  background-color: #5dc5c5;
+  color: white;
+  font-size: 1.2rem;
+  font-family: 'Karla', sans-serif;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 40px;
+  color: #119797;;
+  margin: 0;
+}
+
+.instructions {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin-top: 0;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(233, 221, 221);
+}
+.roll-dice:hover
+{
+  background-color: #284949;
+}
+
+.roll-dice:focus {
+  outline: none;
+}
+
+.roll-dice:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.goback{
+  background-color: #2475a4;
+  color: white;
+  padding: 10px 20px;
+  width: 160px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.goback:hover
+{
+  background-color: #8dabbc;
+}
+
+.round-button {
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  background-color: #40a12a;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  margin-top: 20px;
+}
+
+.button-container {
+  text-align: center;
+  margin-bottom:10px}
+
+
+.header {
+
+  color: #fff;
+  padding: 10px;
+
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #2d9595;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  border: 2px solid #2d9595;
+  border-radius: 5px;
+
+}
+
+nav a:hover {
+  color: #699cb7;
+}
+
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+
+}
+
+.login div {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+p a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .login div {
+    margin: 20px;
+  }
+}
+
+
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-container {
+  text-align: center;
+}
+
+.title {
+  font-family: 'YourAwesomeFont', sans-serif;
+  margin-bottom: 10px;
+  color:#408181;
+ 
+  font-size: 44px;
+  font-weight: bold;
+ 
+}
+h3{
+  font-family: 'YourAwesomeFont', sans-serif;
+  margin-bottom: 20px;
+  color:#0056b3;
+
+  font-size: 24px;
+  font-weight: bold;
+
+}
+
+.play {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  width:160px;
+  font-size: 16px;
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play:hover {
+  background-color: #45a049;
+ 
+} */
