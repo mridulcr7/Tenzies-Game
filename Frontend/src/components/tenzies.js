@@ -3,8 +3,11 @@ import React, { useState, useEffect } from "react";
 import Die from "./die";
 import { nanoid } from "nanoid";
 import { useNavigate } from 'react-router-dom';
+import "./style.css";
+
 
 function Tenzies() {
+
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
     const [count, setCount] = useState(0);
@@ -13,22 +16,24 @@ function Tenzies() {
     const [endTime, setEndTime] = useState(null);
     const [timetaken, setTimetaken] = useState(null);
     const [currtime, setCurrtime] = useState(new Date());
+    const [celebrate, setCelebrate] = useState(false);
+
 
     useEffect(() => {
+
         const interval = setInterval(updateTime, 1000);
 
         return () => clearInterval(interval);
     }, []);
 
-    useEffect(() => {
-        if (tenzies) {
-            setEndTime(new Date());
-            const timeTaken = (endTime - startTime) / 1000;
-            setTimetaken(timeTaken);
-        }
-    }, [tenzies, startTime, endTime]);
+    // useEffect(() => {
+    //     if (tenzies) {
+    //         setEndTime(new Date());
 
-    React.useEffect(() => {
+    //     }
+    // }, [tenzies, startTime, endTime]);
+
+    useEffect(() => {
         const allHeld = dice.every(die => die.isHeld);
         const firstValue = dice[0].value;
         const allSameValue = dice.every(die => die.value === firstValue);
@@ -36,14 +41,20 @@ function Tenzies() {
         if (allHeld && allSameValue) {
             setTenzies(true);
             setEndTime(new Date());
-            alert("Game is over!");
+            const timeTaken = (currtime - startTime) / 1000;
+            setTimetaken(timeTaken);
+            setCelebrate(true);
         }
     }, [dice]);
 
 
     function updateTime() {
-        const now = new Date();
-        setCurrtime(now);
+        if (tenzies === false) {
+            const now = new Date();
+            setCurrtime(now);
+        }
+
+
     }
 
     function allNewDice() {
@@ -99,17 +110,22 @@ function Tenzies() {
 
     return (
         <main
-            className={`${tenzies ? "bg-green-600" : "bg-gradient-to-r from-blue-700 to-indigo-900"
+            className={`${tenzies
+                ? `bg-pink-600 ${celebrate ? "celebrate" : ""}`
+                : "bg-gradient-to-r from-blue-700 to-indigo-900"
                 } min-h-screen text-white p-8 flex flex-col items-center justify-center transition duration-500`}
+
         >
             <h1 className="text-4xl font-bold mb-4">🎲 Tenzies 🎲</h1>
             <p className="mb-4 text-center">
                 Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
             </p>
             <div className="mb-4 flex items-center">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue mr-4">
-                    ⏳ Time: {Math.floor((currtime - startTime) / 1000)}s
-                </button>
+                {!tenzies &&
+                    <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue mr-4">
+                        ⏳ Time: {Math.floor((currtime - startTime) / 1000)}s
+                    </button>
+                }
                 {tenzies && (
                     <div className="text-green-500 font-bold">
                         🏆 Game Over! Time Taken: {timetaken}s
