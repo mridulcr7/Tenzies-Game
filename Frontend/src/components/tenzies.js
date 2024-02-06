@@ -111,7 +111,7 @@ function Tenzies() {
     return (
         <main
             className={`${tenzies
-                ? `bg-pink-600 ${celebrate ? "celebrate" : ""}`
+                ? `bg-yellow-600 ${celebrate ? "celebrate" : ""}`
                 : "bg-gradient-to-r from-blue-700 to-indigo-900"
                 } min-h-screen text-white p-8 flex flex-col items-center justify-center transition duration-500`}
 
