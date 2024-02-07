@@ -24,4 +24,5 @@
 
 .animate-celebrate {
     animation: celebrateAnimation 2s infinite;
+    background-color: rgb(225, 0, 255);
 }

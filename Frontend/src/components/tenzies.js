@@ -4,6 +4,7 @@ import Die from "./die";
 import { nanoid } from "nanoid";
 import { useNavigate } from 'react-router-dom';
 import "./style.css";
+import Confetti from 'react-confetti'
 
 
 function Tenzies() {
@@ -12,6 +13,7 @@ function Tenzies() {
     const [tenzies, setTenzies] = useState(false);
     const [count, setCount] = useState(0);
     const navigate = useNavigate();
+
     const [startTime, setStartTime] = useState(new Date());
     const [endTime, setEndTime] = useState(null);
     const [timetaken, setTimetaken] = useState(null);
@@ -84,6 +86,8 @@ function Tenzies() {
             setEndTime(new Date());
             setTenzies(false);
             setDice(allNewDice());
+            setCelebrate(false)
+            setStartTime(new Date())
         }
     }
 
@@ -111,18 +115,19 @@ function Tenzies() {
     return (
         <main
             className={`${tenzies
-                ? `bg-yellow-600 ${celebrate ? "celebrate" : ""}`
-                : "bg-gradient-to-r from-blue-700 to-indigo-900"
+                ? `bg-[#512853]`
+                : "bg-[#30727d]"
                 } min-h-screen text-white p-8 flex flex-col items-center justify-center transition duration-500`}
 
         >
+            {tenzies && <Confetti />}
             <h1 className="text-4xl font-bold mb-4">🎲 Tenzies 🎲</h1>
             <p className="mb-4 text-center">
                 Roll until all dice are the same. Click each die to freeze it at its current value between rolls.
             </p>
             <div className="mb-4 flex items-center">
                 {!tenzies &&
-                    <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue mr-4">
+                    <button className="bg-[#2ea8a8] text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue mr-4">
                         ⏳ Time: {Math.floor((currtime - startTime) / 1000)}s
                     </button>
                 }
@@ -145,7 +150,7 @@ function Tenzies() {
                 </button>
                 <button
                     onClick={() => navigate("/body")}
-                    className="bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 focus:outline-none focus:shadow-outline-red"
+                    className="bg-[#a8a348] text-white px-4 py-2 rounded-md hover:bg-[#88391e] focus:outline-none focus:shadow-outline-red"
                 >
                     🔄 Go back
                 </button>

@@ -11,7 +11,7 @@ import { useAuthContext } from './hooks/useAuthContext'
 
 
 function App() {
-  const { user } = useAuthContext();
+   const { user } = useAuthContext();
 
   return (
     <div className="App">
@@ -26,7 +26,7 @@ function App() {
 
           <Route
             path="/body"
-            element={user ? <Body /> : <Navigate to="/login" />}
+            element={<Body/>}
           />
           <Route
             path="/"
@@ -45,8 +45,8 @@ function App() {
             element={user ? <Dashboard /> : <Navigate to="/login" />}
           />
           <Route
-            path="/tenzies"
-            element={user ? <Tenzies /> : <Navigate to="/login" />}
+          path="/tenzies"
+          element={<Tenzies />}
           />
         </Routes>
 

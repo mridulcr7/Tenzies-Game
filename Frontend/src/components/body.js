@@ -11,23 +11,50 @@ function Body() {
   function play() {
     navigate("/tenzies");
   }
-
   return (
-    <div className="bg-gray-800 min-h-screen text-white">
+    <div className="flex flex-col min-h-screen bg-cover bg-center" style={{ backgroundImage: 'url("j8.jpg")' }}>
       <Header />
 
-      <div className="container mx-auto flex flex-col items-center justify-center h-screen">
-        <h1 className="text-4xl font-bold mb-4">Hello, {user.name}!</h1>
-        <h3 className="text-lg mb-4">Let's play now</h3>
-        <button
-          onClick={play}
-          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue"
-        >
-          Play Game
-        </button>
+      <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center h-screen bg-opacity-75">
+        <div className="lg:w-1/2 lg:pr-8 flex justify-center items-center">
+          <div className="text-center">
+            <h1 className="text-6xl font-extrabold mb-2 mt-100 text-white ml-[250px] mt-[100px]">
+              Welcome, {user.name}!
+            </h1>
+            <h3 className="text-lg mb-6 text-white  ml-[250px]">
+              Get ready for an exciting gaming experience.
+            </h3>
+            <button
+              onClick={play}
+              className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 focus:outline-none focus:shadow-outline-blue ml-[250px]"
+            >
+             
+              Play Game
+            </button>
+          </div>
+        </div>
+
+        <div className="lg:w-1/3 lg:h-200 flex flex-col items-center justify-center">
+          <div className="relative aspect-w-16 aspect-h-14 mb-4  mt-[130px] ml-[200px]">
+            <iframe
+              width="350"
+              height="255"
+              src="https://www.youtube.com/embed/B7SkAq_94J8?si=2lDrzjcwXjJI3gJF"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="text-white text-center">
+            <p className="text-[20px] ml-[200px]">Demo</p>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+
+
+ 
+  }
 
 export default Body;
