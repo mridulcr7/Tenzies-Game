@@ -57,6 +57,7 @@ function Tenzies() {
         }
 
 
+
     }
 
     function allNewDice() {
@@ -85,9 +86,10 @@ function Tenzies() {
         } else {
             setEndTime(new Date());
             setTenzies(false);
-            setDice(allNewDice());
             setCelebrate(false)
-            setStartTime(new Date())
+            setStartTime(currtime)
+            setDice(allNewDice());
+
         }
     }
 
