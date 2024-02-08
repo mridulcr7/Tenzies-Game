@@ -2,16 +2,16 @@ import './App.css';
 import Tenzies from './components/tenzies';
 import Login from './components/login';
 import Register from './components/register';
-import Dashboard from './components/dashboard';
 import Header from './components/header';
 import Body from './components/body';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
+import Leaderboard from './components/Leaderboard';
 
 
 
 function App() {
-   const { user } = useAuthContext();
+  const { user } = useAuthContext();
 
   return (
     <div className="App">
@@ -26,7 +26,7 @@ function App() {
 
           <Route
             path="/body"
-            element={<Body/>}
+            element={user ? <Body /> : <Navigate to="/login" />}
           />
           <Route
             path="/"
@@ -41,12 +41,12 @@ function App() {
             element={!user ? <Register /> : <Navigate to="/" />}
           />
           <Route
-            path="/dashboard"
-            element={user ? <Dashboard /> : <Navigate to="/login" />}
+            path="/leaderboard"
+            element={user ? <Leaderboard /> : <Navigate to="/login" />}
           />
           <Route
-          path="/tenzies"
-          element={<Tenzies />}
+            path="/tenzies"
+            element={user ? <Tenzies /> : <Navigate to="/login" />}
           />
         </Routes>
 

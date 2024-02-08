@@ -5,9 +5,12 @@ import { nanoid } from "nanoid";
 import { useNavigate } from 'react-router-dom';
 import "./style.css";
 import Confetti from 'react-confetti'
+import { useGameRecord } from "../hooks/useGameRecord"
 
 
 function Tenzies() {
+
+    const { gameRecord } = useGameRecord()
 
     const [dice, setDice] = useState(allNewDice());
     const [tenzies, setTenzies] = useState(false);
@@ -46,6 +49,8 @@ function Tenzies() {
             const timeTaken = (currtime - startTime) / 1000;
             setTimetaken(timeTaken);
             setCelebrate(true);
+            const completionTime = timeTaken;
+            gameRecord(completionTime);
         }
     }, [dice]);
 

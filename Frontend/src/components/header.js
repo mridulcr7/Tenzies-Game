@@ -22,7 +22,7 @@ const Header = () => {
         <nav className="flex items-center space-x-4 flex-grow">
           {user && (
             <div className="flex items-center space-x-4 flex-grow">
-              <Link to="/dashboard" className="text-[#e6eced]  text-[28px] hover:text-gray-500 transition duration-300 ml-[300px] mr-[300px]">
+              <Link to="/leaderboard" className="text-[#e6eced]  text-[28px] hover:text-gray-500 transition duration-300 ml-[300px] mr-[300px]">
                Leaderboard
               </Link>
 
