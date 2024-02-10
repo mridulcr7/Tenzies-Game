@@ -21,7 +21,7 @@ function Tenzies() {
     const [endTime, setEndTime] = useState(null);
     const [timetaken, setTimetaken] = useState(null);
     const [currtime, setCurrtime] = useState(new Date());
-    const [celebrate, setCelebrate] = useState(false);
+    // const [celebrate, setCelebrate] = useState(false);
 
 
     useEffect(() => {
@@ -48,7 +48,7 @@ function Tenzies() {
             setEndTime(new Date());
             const timeTaken = (currtime - startTime) / 1000;
             setTimetaken(timeTaken);
-            setCelebrate(true);
+
             const completionTime = timeTaken;
             gameRecord(completionTime);
         }
@@ -91,7 +91,7 @@ function Tenzies() {
         } else {
             setEndTime(new Date());
             setTenzies(false);
-            setCelebrate(false)
+
             setStartTime(currtime)
             setDice(allNewDice());
 

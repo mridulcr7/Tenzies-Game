@@ -7,6 +7,7 @@ import Body from './components/body';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useAuthContext } from './hooks/useAuthContext'
 import Leaderboard from './components/Leaderboard';
+import Profile from './components/Profile';
 
 
 
@@ -43,6 +44,10 @@ function App() {
           <Route
             path="/leaderboard"
             element={user ? <Leaderboard /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/profile"
+            element={user ? <Profile /> : <Navigate to="/login" />}
           />
           <Route
             path="/tenzies"
