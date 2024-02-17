@@ -3,20 +3,20 @@ import { useAuthContext } from './useAuthContext'
 import Cookies from "js-cookie";
 
 
-export const useLeaderboard = () => {
+export const useUserProfile = () => {
     const [error, setError] = useState(null)
-    const [leaderboardData, setleaderboardData] = useState(null);
+    const [recentPerformances, setrecentPerformances] = useState(null);
+    const [topPerformances, settopPerformances] = useState(null);
 
     const { user } = useAuthContext();
 
 
-    const leaderboard = async () => {
+    const userProfile = async () => {
+        console.log(user);
+        console.log(user.id);
 
-      //  console.log(user.token);
-        
-        
         try {
-            const response = await fetch('http://localhost:4000/leaderboard', {
+            const response = await fetch(`http://localhost:4000/userprofile/${user.id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -29,7 +29,10 @@ export const useLeaderboard = () => {
             }
             else {
                 //console.log(json);
-                setleaderboardData(json);
+                setrecentPerformances(json.recentPerformances);
+                settopPerformances(json.topPerformances);
+                console.log(json.recentPerformances)
+                console.log(json.topPerformances);
             }
 
         }
@@ -39,7 +42,7 @@ export const useLeaderboard = () => {
         }
     }
 
-    return { leaderboard, leaderboardData, error }
+    return { userProfile, recentPerformances, topPerformances, error }
 
 }
 

@@ -12,6 +12,8 @@ const addgamerecord = async (req, res) => {
             userId: user._id, createdAt, completionTime
         };
         const record = await GameRecord.create(gamerecord);
+        record.save();
+        GameRecord.save();
         res.json(record);
     } catch (error) {
         console.error(error);

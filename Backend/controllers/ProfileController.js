@@ -2,18 +2,20 @@ const GameRecord = require('../models/Gamerecord');
 
 // Get recent and top performances for a user
 const getUserProfile = async (req, res) => {
-    const userId = req.user._id;
-
+    const userId = req.params.id;
+    console.log(userId);
     try {
         const recentPerformances = await GameRecord
             .find({ userId })
             .sort({ createdAt: -1 })
-            .limit(5);
+            .limit(5)
+            
 
         const topPerformances = await GameRecord
             .find({ userId })
             .sort({ completionTime: 1 })
-            .limit(5);
+            .limit(5)
+           
 
         res.json({ recentPerformances, topPerformances });
     } catch (error) {
