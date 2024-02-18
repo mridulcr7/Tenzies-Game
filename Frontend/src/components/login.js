@@ -24,10 +24,10 @@ const Login = () => {
       <Header />
       <div
         className="bg-cover bg-center h-screen flex items-center justify-center"
-        style={{ backgroundImage: `url(${background})` }}
+        style={{ backgroundImage: `url("j7.jpg")` }}
       >
         <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg w-96 text-white">
-          <h1 className="text-3xl font-bold mb-4">Sign In</h1>
+          <h1 className="text-3xl font-bold mb-4 ">Sign In</h1>
           <input
             type="email"
             onChange={(e) => setEmail(e.target.value)}
@@ -44,7 +44,7 @@ const Login = () => {
           />
           <button
             onClick={handleSubmit}
-            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
+            className="bg-blue-600 text-white  mt-[20px] px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
           >
             Sign In
           </button>

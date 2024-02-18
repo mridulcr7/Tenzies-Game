@@ -123,7 +123,7 @@ function Tenzies() {
         <main
             className={`${tenzies
                 ? `bg-[#512853]`
-                : "bg-[#30727d]"
+                : "bg-[#27355b]"
                 } min-h-screen text-white p-8 flex flex-col items-center justify-center transition duration-500`}
 
         >
@@ -134,7 +134,7 @@ function Tenzies() {
             </p>
             <div className="mb-4 flex items-center">
                 {!tenzies &&
-                    <button className="bg-[#2ea8a8] text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue mr-4">
+                    <button className="bg-[#37a1a1] text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue mr-4">
                         ⏳ Time: {Math.floor((currtime - startTime) / 1000)}s
                     </button>
                 }
@@ -157,7 +157,7 @@ function Tenzies() {
                 </button>
                 <button
                     onClick={() => navigate("/body")}
-                    className="bg-[#a8a348] text-white px-4 py-2 rounded-md hover:bg-[#88391e] focus:outline-none focus:shadow-outline-red"
+                    className="bg-[#ba3636] text-white px-4 py-2 rounded-md hover:bg-[#88391e] focus:outline-none focus:shadow-outline-red"
                 >
                     🔄 Go back
                 </button>

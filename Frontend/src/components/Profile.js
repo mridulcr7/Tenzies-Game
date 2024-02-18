@@ -20,7 +20,7 @@ function Profile() {
     return (
         <div className="container mx-auto bg-cover bg-center h-screen" style={{ backgroundImage: `url("j7.jpg")` }}>
 
-            <div className="bg-opacity-50 p-8 rounded-lg flex">
+            <div className="p-8 rounded-lg flex">
                 <div className="flex-grow pr-4 align-top">
                     <h1 className="text-3xl font-semibold mb-4 text-white">Your Profile</h1>
                     {error ? (

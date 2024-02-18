@@ -24,7 +24,7 @@ const Signup = () => {
       <Header />
       <div
         className="bg-cover bg-center h-screen flex items-center justify-center"
-        style={{ backgroundImage: `url(${background})` }}
+        style={{ backgroundImage: `url("j7.jpg")` }}
       >
         <div className="bg-gray-800 bg-opacity-75 p-8 rounded-lg w-96 text-white">
           <h1 className="text-3xl font-bold mb-4">Sign Up</h1>

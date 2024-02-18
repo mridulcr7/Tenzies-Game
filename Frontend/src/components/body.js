@@ -28,7 +28,7 @@ function Body() {
               onClick={play}
               className="bg-green-600 text-white px-6 py-3 rounded-md hover:bg-green-700 focus:outline-none focus:shadow-outline-blue ml-[250px]"
             >
-             
+
               Play Game
             </button>
           </div>
@@ -39,7 +39,7 @@ function Body() {
             <iframe
               width="350"
               height="255"
-              src="https://www.youtube.com/embed/B7SkAq_94J8?si=2lDrzjcwXjJI3gJF"
+              src="t3.mp4?autoplay=1"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
@@ -54,7 +54,7 @@ function Body() {
   );
 
 
- 
-  }
+
+}
 
 export default Body;

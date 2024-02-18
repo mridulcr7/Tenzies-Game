@@ -15,26 +15,28 @@ const Header = () => {
   return (
     <header className="bg-gradient-to-r from-blue-500 via-blue-700 to-blue-900 fixed w-full z-10">
       <div className="container mx-auto flex items-center justify-between p-4">
-       
-        <span className="text-white font-serif text-2xl font-semibold">🎲Tenzies🎲</span>
+
+        <span className="text-white font-serif text-4xl font-extrabold tracking-wide">🎲Tenzies🎲</span>
 
         <nav className="flex items-center space-x-4 ml-auto">
           {user && (
             <div className="flex items-center space-x-4">
-              <Link to="/leaderboard" className="text-white text-sm hover:text-gray-300 transition duration-300">
-                Leaderboard
-              </Link>
+              <div className="flex items-center space-x-4">
+                <Link to="/leaderboard" className="text-white  text-lg hover:text-gray-300 transition duration-300 font-medium">
+                  Leaderboard
+                </Link>
 
-              <Link to="/profile" className="text-white text-sm hover:text-gray-300 transition duration-300">
-                {user.name}
-              </Link>
+                <Link to="/profile" className="text-white text-lg  hover:text-gray-300 transition duration-300 font-medium">
+                  {user.name}
+                </Link>
 
-              <div className="flex items-center">
-                <img
-                  src={Avatar}
-                  alt={`${user.name}'s Avatar`}
-                  className="w-8 h-8 rounded-full border-2 border-purple-500 ml-2"
-                />
+                <div className="flex items-center">
+                  <img
+                    src={Avatar}
+                    alt={`${user.name}'s Avatar`}
+                    className="w-10 h-10 rounded-full border-4 border-purple-500 ml-2"
+                  />
+                </div>
               </div>
             </div>
           )}
@@ -43,13 +45,13 @@ const Header = () => {
             <div className="flex items-center space-x-4">
               <Link
                 to="/login"
-                className="text-white hover:text-gray-300 transition duration-300"
+                className="text-white hover:text-gray-300 transition duration-300 text-lg font-medium"
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="text-white hover:text-gray-300 transition duration-300"
+                className="text-white hover:text-gray-300 transition duration-300 text-lg font-medium"
               >
                 Register
               </Link>
@@ -57,10 +59,10 @@ const Header = () => {
           )}
 
           {user && (
-            <div className="flex items-center space-x-4">
+            <div className="ml-auto">
               <button
                 onClick={handleClick}
-                className="bg-red-500 text-white text-sm px-3 py-1 rounded-md hover:bg-red-600 focus:outline-none focus:shadow-outline-red transition duration-300"
+                className="bg-red-500 text-white text-lg px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:shadow-outline-red transition duration-300 font-medium"
               >
                 Logout
               </button>
@@ -69,6 +71,7 @@ const Header = () => {
         </nav>
       </div>
     </header>
+
   );
 };
 
