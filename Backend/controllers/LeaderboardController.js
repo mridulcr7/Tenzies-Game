@@ -5,8 +5,7 @@ const addgamerecord = async (req, res) => {
     const user = req.user;
     const createdAt = new Date();
     const { completionTime } = req.body;
-    console.log(completionTime);
-    console.log(user, createdAt, completionTime);
+    
     try {
         const gamerecord = {
             userId: user._id, createdAt, completionTime
@@ -16,7 +15,6 @@ const addgamerecord = async (req, res) => {
         GameRecord.save();
         res.json(record);
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 };
@@ -36,7 +34,6 @@ const getLeaderboard = async (req, res) => {
 
         res.json(leaderboard);
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 };

@@ -3,7 +3,6 @@ const GameRecord = require('../models/Gamerecord');
 // Get recent and top performances for a user
 const getUserProfile = async (req, res) => {
     const userId = req.params.id;
-    console.log(userId);
     try {
         const recentPerformances = await GameRecord
             .find({ userId })
@@ -19,7 +18,6 @@ const getUserProfile = async (req, res) => {
 
         res.json({ recentPerformances, topPerformances });
     } catch (error) {
-        console.error(error);
         res.status(500).json({ message: 'Internal Server Error' });
     }
 };

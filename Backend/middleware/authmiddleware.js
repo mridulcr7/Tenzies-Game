@@ -1,15 +1,15 @@
 const jwt = require('jsonwebtoken');
 const User = require("../models/User");
+require("dotenv").config();
+
 
 const requireAuth = (req, res, next) => {
-    // const token = req.cookies.jwt;
     const auth = req.headers.authorization || req.headers.Authorization;
     const token = auth.split(" ")[1];
-    // console.log(req);
-    // console.log(req.cookies);
+
     console.log(token);
     if (token) {
-        jwt.verify(token, 'ss', async (err, decodedToken) => {
+        jwt.verify(token, process.env.JWT_SECRET, async (err, decodedToken) => {
             if (err) {
                 res.status(401).json({
                     success: false,

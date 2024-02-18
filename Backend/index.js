@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 const cookieParser = require('cookie-parser');
 const cors = require("cors");
+require("dotenv").config();
 
 
 const app = express();
@@ -12,13 +13,14 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-const dbURI = "mongodb+srv://mridulpandey5277:mridul@cluster0.iobj3de.mongodb.net/tenzies";
+const PORT = process.env.PORT;
 
+const dbURI = process.env.MONGO_URI_DEV;
 
 mongoose.connect(dbURI)
     .then(() => {
         console.log("Let's go")
-        app.listen(4000);
+        app.listen(PORT);
     })
     .catch(err => {
         console.log("ERROR!!")
